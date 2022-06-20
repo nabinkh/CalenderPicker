@@ -86,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               daysCount: days,
               // ignore: avoid_print
               enableMultiSelection: true,
+              borderRadius: BorderRadius.zero,
               // ignore: avoid_print
               multiSelectionListener: (value) => print(value),
               selectionColor: const Color(0XFF0342E9),
