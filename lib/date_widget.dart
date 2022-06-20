@@ -50,6 +50,7 @@ class _DateWidgetState extends State<DateWidget>
         width: widget.width,
         margin: const EdgeInsets.all(3.0),
         decoration: BoxDecoration(
+          borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
           color: widget.isMultiSelectionEnable == true
               ? isSelect == false
                   ? widget.selectionColor
