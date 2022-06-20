@@ -47,44 +47,50 @@ class _DateWidgetState extends State<DateWidget>
     super.build(context);
     return InkWell(
       child: Container(
-        width: widget.width,
-        margin: const EdgeInsets.all(3.0),
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
-          color: widget.isMultiSelectionEnable == true
-              ? isSelect == false
-                  ? widget.selectionColor
-                  : widget.activeColor
-              : widget.selectionColor,
+          color: widget.activeColor,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                DateFormat("E", widget.locale)
-                    .format(widget.date)
-                    .toUpperCase(),
-                // .format(widget.date)
-                // .substring(0, 1)
-                // .toUpperCase(), // WeekDay
-                style: widget.isMultiSelectionEnable == true
-                    ? isSelect == false
-                        ? widget.dayTextStyle
-                        : widget.activeDayStyle
-                    : widget.dayTextStyle,
-              ),
-              Text(
-                widget.date.day.toString(), // Date
-                style: widget.isMultiSelectionEnable == true
-                    ? isSelect == false
-                        ? widget.dateTextStyle
-                        : widget.activeDateStyle
-                    : widget.dateTextStyle,
-              ),
-            ],
+        child: Container(
+          width: widget.width,
+          margin: const EdgeInsets.all(3.0),
+          decoration: BoxDecoration(
+            borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
+            color: widget.isMultiSelectionEnable == true
+                ? isSelect == false
+                    ? widget.selectionColor
+                    : widget.activeColor
+                : widget.selectionColor,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  DateFormat("E", widget.locale)
+                      .format(widget.date)
+                      .toUpperCase(),
+                  // .format(widget.date)
+                  // .substring(0, 1)
+                  // .toUpperCase(), // WeekDay
+                  style: widget.isMultiSelectionEnable == true
+                      ? isSelect == false
+                          ? widget.dayTextStyle
+                          : widget.activeDayStyle
+                      : widget.dayTextStyle,
+                ),
+                Text(
+                  widget.date.day.toString(), // Date
+                  style: widget.isMultiSelectionEnable == true
+                      ? isSelect == false
+                          ? widget.dateTextStyle
+                          : widget.activeDateStyle
+                      : widget.dateTextStyle,
+                ),
+              ],
+            ),
           ),
         ),
       ),
