@@ -48,9 +48,11 @@ class _DateWidgetState extends State<DateWidget>
     return InkWell(
       child: Container(
         padding: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-            border: Border.all(color: widget.activeColor, width: 1.5),
-            borderRadius: widget.borderRadius ?? BorderRadius.circular(8)),
+        decoration: (!widget.isMultiSelectionEnable && !isSelect)
+            ? BoxDecoration(
+                border: Border.all(color: widget.activeColor, width: 1.5),
+                borderRadius: widget.borderRadius ?? BorderRadius.circular(8))
+            : null,
         child: Container(
           width: widget.width,
           margin: const EdgeInsets.all(3.0),
