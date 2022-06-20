@@ -14,7 +14,7 @@ class CalenderPicker extends StatefulWidget {
   final Color selectionColor;
   final TextStyle monthTextStyle;
   final TextStyle dayTextStyle;
-  final BorderRadiusGeometry? borderRadius;
+  final BorderRadiusGeometry borderRadius;
   final TextStyle dateTextStyle;
   final DateTime? /*?*/ initialSelectedDate;
   final List<DateTime>? activeDates;
@@ -37,7 +37,7 @@ class CalenderPicker extends StatefulWidget {
     this.selectionColor = AppColors.defaultSelectionColor,
     this.initialSelectedDate,
     this.multiSelectionListener,
-    this.borderRadius,
+    required this.borderRadius,
     this.activeDates,
     this.daysCount = 500,
     this.onDateChange,
