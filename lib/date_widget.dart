@@ -9,7 +9,7 @@ class DateWidget extends StatefulWidget {
   final TextStyle? monthTextStyle, dayTextStyle, dateTextStyle;
   final Color selectionColor;
   final Color activeColor;
-  final BorderRadiusGeometry borderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final TextStyle activeDayStyle;
   final TextStyle activeDateStyle;
   final MultiSelectionListener? multiSelectionListener;
@@ -26,7 +26,7 @@ class DateWidget extends StatefulWidget {
     this.multiSelectionListener,
     required this.activeDayStyle,
     required this.activeColor,
-    required this.borderRadius,
+    this.borderRadius,
     required this.isMultiSelectionEnable,
     required this.dateTextStyle,
     required this.selectionColor,
@@ -50,7 +50,8 @@ class _DateWidgetState extends State<DateWidget>
         width: widget.width,
         margin: const EdgeInsets.all(3.0),
         decoration: BoxDecoration(
-          borderRadius: widget.borderRadius,
+          borderRadius: widget.borderRadius ??
+              const BorderRadius.all(Radius.circular(25)),
           color: widget.isMultiSelectionEnable == true
               ? isSelect == false
                   ? widget.selectionColor
