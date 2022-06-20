@@ -14,6 +14,7 @@ class CalenderPicker extends StatefulWidget {
   final Color selectionColor;
   final TextStyle monthTextStyle;
   final TextStyle dayTextStyle;
+  final BorderRadiusGeometry? borderRadius;
   final TextStyle dateTextStyle;
   final DateTime? /*?*/ initialSelectedDate;
   final List<DateTime>? activeDates;
@@ -36,6 +37,7 @@ class CalenderPicker extends StatefulWidget {
     this.selectionColor = AppColors.defaultSelectionColor,
     this.initialSelectedDate,
     this.multiSelectionListener,
+    this.borderRadius,
     this.activeDates,
     this.daysCount = 500,
     this.onDateChange,
@@ -49,7 +51,8 @@ class CalenderPicker extends StatefulWidget {
   State<StatefulWidget> createState() => _CalenderPickerState();
 }
 
-class _CalenderPickerState extends State<CalenderPicker> with AutomaticKeepAliveClientMixin{
+class _CalenderPickerState extends State<CalenderPicker>
+    with AutomaticKeepAliveClientMixin {
   DateTime? _currentDate;
 
   final ScrollController _controller = ScrollController();
@@ -103,6 +106,7 @@ class _CalenderPickerState extends State<CalenderPicker> with AutomaticKeepAlive
             dayTextStyle: isSelected ? selectedDayStyle : widget.dayTextStyle,
             width: widget.width,
             locale: widget.locale,
+            borderRadius: widget.borderRadius,
             isMultiSelectionEnable: widget.enableMultiSelection,
             activeColor: widget.selectionColor,
             activeDateStyle: selectedDateStyle,
@@ -128,7 +132,7 @@ class _CalenderPickerState extends State<CalenderPicker> with AutomaticKeepAlive
                 }
                 setState(() {
                   _currentDate = selectedDate;
-                  // ignore: avoid_print                
+                  // ignore: avoid_print
                 });
               } else {
                 setState(() {
