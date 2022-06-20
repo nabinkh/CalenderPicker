@@ -47,10 +47,12 @@ class _DateWidgetState extends State<DateWidget>
     super.build(context);
     return InkWell(
       child: Container(
-        padding: const EdgeInsets.all(1),
-        decoration: BoxDecoration(
-          color: widget.activeColor,
-        ),
+        padding: const EdgeInsets.all(2),
+        decoration: isSelect
+            ? BoxDecoration(
+                border: Border.all(color: widget.activeColor, width: 1.5),
+                borderRadius: widget.borderRadius ?? BorderRadius.circular(8))
+            : null,
         child: Container(
           width: widget.width,
           margin: const EdgeInsets.all(3.0),
