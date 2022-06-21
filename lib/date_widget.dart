@@ -49,7 +49,7 @@ class _DateWidgetState extends State<DateWidget>
       child: Container(
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
-          border: (Border.all(color: widget.selectionColor, width: 1.5)),
+          border: (Border.all(color: Colors.transparent, width: 1.5)),
           borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
         ),
         child: Container(
