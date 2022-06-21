@@ -54,7 +54,7 @@ class _DateWidgetState extends State<DateWidget>
         ),
         child: Container(
           width: widget.width,
-          margin: const EdgeInsets.all(3.0),
+          // margin: const EdgeInsets.all(3.0),
           decoration: BoxDecoration(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
             color: widget.isMultiSelectionEnable == true
@@ -64,7 +64,7 @@ class _DateWidgetState extends State<DateWidget>
                 : widget.selectionColor,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(2),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
