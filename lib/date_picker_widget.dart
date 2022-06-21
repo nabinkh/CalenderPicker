@@ -113,7 +113,7 @@ class _CalenderPickerState extends State<CalenderPicker>
             activeDayStyle: selectedDayStyle,
             //for color change
             selectionColor:
-                isSelected ? widget.selectionColor : const Color(0XFFEDF3FF),
+                isSelected ? widget.selectionColor : Colors.transparent,
 
             multiSelectionListener: (value) {
               setState(() {
