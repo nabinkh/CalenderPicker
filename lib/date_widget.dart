@@ -70,6 +70,14 @@ class _DateWidgetState extends State<DateWidget>
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
+                  widget.date.day.toString(), // Date
+                  style: widget.isMultiSelectionEnable == true
+                      ? isSelect == false
+                          ? widget.dateTextStyle
+                          : widget.activeDateStyle
+                      : widget.dateTextStyle,
+                ),
+                Text(
                   DateFormat("E", widget.locale)
                       .format(widget.date)
                       .toUpperCase(),
@@ -81,14 +89,6 @@ class _DateWidgetState extends State<DateWidget>
                           ? widget.dayTextStyle
                           : widget.activeDayStyle
                       : widget.dayTextStyle,
-                ),
-                Text(
-                  widget.date.day.toString(), // Date
-                  style: widget.isMultiSelectionEnable == true
-                      ? isSelect == false
-                          ? widget.dateTextStyle
-                          : widget.activeDateStyle
-                      : widget.dateTextStyle,
                 ),
               ],
             ),
